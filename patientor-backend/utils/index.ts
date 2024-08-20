@@ -14,15 +14,14 @@ export const toNewPatient = (input: unknown): PatientRequestDTO => {
     "name" in input &&
     "dateOfBirth" in input &&
     "occupation" in input &&
-    "gender" in input &&
-    "entries" in input
+    "gender" in input
   ) {
     const newPatient: PatientRequestDTO = {
       name: parseString(input.name),
       dateOfBirth: parseDate(input.dateOfBirth),
       occupation: parseString(input.occupation),
       gender: parseGender(input.gender),
-      entries: parseEntries(input.entries),
+      entries: "entries" in input ? parseEntries(input.entries) : [],
       ssn: "ssn" in input ? parseString(input.ssn) : undefined,
     };
 
