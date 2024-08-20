@@ -41,8 +41,8 @@
 
 # --- DEVELOPMENT MODE WORKS!!!!!! ----- https://docs.docker.com/compose/file-watch/#prerequisites
 # run with docker compose --watch
-# Run as a non-privileged user
 FROM node:20
+# Run as a non-privileged user
 RUN useradd -ms /bin/sh -u 1001 app
 USER app
 
