@@ -4,8 +4,15 @@ services:
     build:
       context: ./patientor/
       dockerfile: dev.Dockerfile
-    # volumes:
-    # - ./patientor/:/usr/src/app
+      # WATCH DEVELOPMENT MODE
+      # docker compose -f docker-compose.dev.yml watch
+    develop:
+      watch:
+        - action: sync
+          path: ./patientor/src
+          target: usr/src/app/src
+      # ignore:
+      #   - node_modules/
     environment:
       - VITE_BACKEND_URL=http://localhost:8080/api
     container_name: patientor-frontend-container-dev
