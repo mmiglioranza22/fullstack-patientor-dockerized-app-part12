@@ -18,7 +18,7 @@
 # CMD ["npm", "run", "dev"]
 # ---- END WORKS -----
 
-
+# --- DEVELOPMENT MODE WORKS!!!!!! ----- https://docs.docker.com/compose/file-watch/#prerequisites
 # run with docker compose --watch
 FROM node:20
 # Run as a non-privileged user
